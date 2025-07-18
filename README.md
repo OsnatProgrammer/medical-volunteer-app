@@ -28,18 +28,21 @@ This app allows users to create and view volunteer profiles with details such as
 
 1. Clone the repository:
 
-```git clone https://github.com/OsnatProgrammer/medical-volunteer-app.git```
-```cd medical-volunteer-app```
+```bash
+git clone https://github.com/OsnatProgrammer/medical-volunteer-app.git
+cd medical-volunteer-app```
 
 2.Install dependencies:
 
 
-```npm install```
+```bash
+npm install```
 
 3.Run the app in development mode (runs React and Electron concurrently):
 
 
-```npm run dev```
+```bash
+npm run dev```
 
 4.Open the Electron app window that opens automatically
 
@@ -47,9 +50,11 @@ Build Instructions
 To build the React frontend:
 
 
-```npm run build```
+```bash
+npm run build```
 
 To start the Electron app after build:
 
 
-```npm run electron```
+```bash
+npm run electron```
