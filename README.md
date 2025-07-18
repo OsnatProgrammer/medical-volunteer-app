@@ -35,7 +35,7 @@ cd medical-volunteer-app
 2.Install dependencies:
 
 ```bash
-npm install
+npm install```
 
 3.Run the app in development mode (runs React and Electron concurrently):
 
