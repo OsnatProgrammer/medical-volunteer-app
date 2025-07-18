@@ -12,7 +12,7 @@ This app allows users to create and view volunteer profiles with details such as
 - Clean and intuitive UI with two main views: Volunteer List and Volunteer Form
 
 - Handling errors and loading states during asynchronous operations
-- Saving data using Jason files on the local computer
+- Saving data using JSON files on the local computer
 
 ---
 
@@ -40,7 +40,7 @@ npm install```
 3.Run the app in development mode (runs React and Electron concurrently):
 
 ```bash
-npm run dev
+npm run dev```
 
 4.Open the Electron app window that opens automatically
 
@@ -48,9 +48,9 @@ Build Instructions
 To build the React frontend:
 
 ```bash
-npm run build
+npm run build```
 
 To start the Electron app after build:
 
 ```bash
-npm run electron
+npm run electron```
