@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Login from "./components/Login/Login";
+import VolunteerPage from "./pages/VolunteerPage/VolunteerPage";
+import ManagerPage from "./pages/ManagerPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+type User =  { type: "manager" } | { type: "volunteer"; volunteerId: string } | { type: null };
+
+const App: React.FC = () => {
+  const [user, setUser] = useState<User>({ type: null });
+
+  const handleLogin = (type: "manager"): void => {
+    setUser({ type });
+  };
+
+  const handleVolunteerLogin = (volunteerId: string): void => {
+    setUser({ type: "volunteer", volunteerId });
+  };
+
+  const handleLogout = (): void => {
+    setUser({ type: null });
+  };
+
+  if (user.type === null) {
+    return (
+      <Login
+        onAdminLogin={() => handleLogin("manager")}
+        onVolunteerLogin={handleVolunteerLogin}
+      />
+    );
+  }
+
+  if (user.type === "manager") {
+    return <ManagerPage onLogout={handleLogout} />;
+  }
+
+  if (user.type === "volunteer") {
+    return (
+      <VolunteerPage volunteerId={user.volunteerId} onLogout={handleLogout} />
+    );
+  }
+
+  return null;
+};
 
 export default App;
