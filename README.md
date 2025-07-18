@@ -30,7 +30,7 @@ This app allows users to create and view volunteer profiles with details such as
 
 ```bash
 git clone https://github.com/OsnatProgrammer/medical-volunteer-app.git
-cd medical-volunteer-app
+cd medical-volunteer-app```
 
 2.Install dependencies:
 
